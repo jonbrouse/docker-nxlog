@@ -7,11 +7,11 @@ RUN apt-get update && \
         zlib1g adduser openssl lsb-base libdbd-mysql libdbd-pgsql libdbd-sqlite3 libdbd-freetds && \
 	rm -rf /var/lib/apt/lists/*
 
-WORKDIR /
+WORKDIR /tmp
 # I would suggest hosting the .tar.gz in something like S3 or 
 # Artifactory and then curling it down in the RUN statement.
-COPY nxlog-client.tar.gz /
-RUN tar -xf nxlog-client.tar.gz && \
+COPY nxlog-client.tar.gz /tmp/
+RUN tar -C / -xf nxlog-client.tar.gz && \
         rm -rf nxlog-client.tar.gz && \
         mkdir -p /var/log/nxlog && \
         mkdir -p /etc/nxlog && \
