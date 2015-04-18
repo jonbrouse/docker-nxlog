@@ -1,4 +1,4 @@
-FROM ubunut:14.04
+FROM ubuntu:14.04
 MAINTAINER Jon Brouse
 
 # Install requried libraries 

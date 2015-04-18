@@ -24,3 +24,5 @@ Build and run:
 #### The Client Binaries
 The client binaries are stored in nxlog-client.tar.gz which is contained in this repo. When I have used this build I normally host it in a private S3 bucket and curl it down during a ```RUN``` action.
 
+#### Issues
+If you are using this with a process manager like supervisor, ensure you start the agent after the other processes. NXLOG needs to see a valid log file to launch. 
